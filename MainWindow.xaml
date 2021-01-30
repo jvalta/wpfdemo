@@ -34,8 +34,42 @@
         <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="Bold" Text="First Name"/>
 <!--Textbox for the username-->        
         <TextBox x:Name="firstNameText" Grid.Column="2" Grid.Row="2" Width="200" Margin="5,0,0,0"/>
+
+<!--Combobox-->
+        <ComboBox x:Name="myComboBox" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"
+                  Margin="10">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image MaxHeight="30" MaxWidth="30" Source=""/>
+                        <TextBlock Text="{Binding FirstName}"/>
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding LastName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
 <!--Submit button-->
         <Button x:Name="submitButton" Content="Run Me" Grid.Column="1" 
-                Grid.Row="3" Grid.ColumnSpan="2" Margin="10" Click="submitButton_Click" />
+                Grid.Row="4" Grid.ColumnSpan="2" Margin="10" Click="submitButton_Click" />
+        
+<!--Image
+        <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="4" Margin="5"
+               Source=""/>
+-->
+<!--Media element
+        <MediaElement Grid.Row="5" Grid.Column="4" Margin="5" 
+                      Source=""/>
+-->
+        <ScrollViewer Grid.Row="1" Grid.Column="4" Grid.RowSpan="6">
+            <StackPanel Orientation = "Vertical" >
+                <Image MaxHeight="200" MaxWidth="200" Source=""/>
+                <Image MaxHeight="200" MaxWidth="200" Source=""/>
+                <Image MaxHeight="200" MaxWidth="200" Source=""/>
+                <Image MaxHeight="200" MaxWidth="200" Source=""/>
+            </StackPanel>
+        </ScrollViewer>
+
     </Grid>
 </Window>
