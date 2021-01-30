@@ -24,5 +24,10 @@ namespace wpfdemo
         {
             InitializeComponent();
         }
+        //Show messagebox when the button is clicked
+        private void submitButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Hello {firstNameText.Text}!");
+        }
     }
 }

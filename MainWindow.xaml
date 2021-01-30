@@ -4,9 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfdemo"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="18" FontFamily="Times New Roman"
+        Title="My WPF Demo" Height="500" Width="800">
+<!--Define form columns and rows-->
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+<!--Create text blocks for the header and text below-->
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="24" 
+                   Text="WPF Demo App" FontWeight="Bold"
+                   Grid.ColumnSpan="3" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="2" FontWeight="Bold" Text="First Name"/>
+<!--Textbox for the username-->        
+        <TextBox x:Name="firstNameText" Grid.Column="2" Grid.Row="2" Width="200" Margin="5,0,0,0"/>
+<!--Submit button-->
+        <Button x:Name="submitButton" Content="Run Me" Grid.Column="1" 
+                Grid.Row="3" Grid.ColumnSpan="2" Margin="10" Click="submitButton_Click" />
     </Grid>
 </Window>
